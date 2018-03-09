@@ -38,7 +38,7 @@ install the plugin:
 Add the following line to your `~/.vimrc` file
 
 ``` vim
-Plugin 'alexbenic/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-navigator'
 ```
 
 Then run
@@ -60,11 +60,11 @@ Add the following to your `~/.tmux.conf` file:
 # See: https://github.com/christoomey/vim-tmux-navigator
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
-bind-key -n M-h if-shell "$is_vim" "send-keys M-h"  "select-pane -L"
-bind-key -n M-j if-shell "$is_vim" "send-keys M-j"  "select-pane -D"
-bind-key -n M-k if-shell "$is_vim" "send-keys M-k"  "select-pane -U"
-bind-key -n M-l if-shell "$is_vim" "send-keys M-l"  "select-pane -R"
-bind-key -n M-\\ if-shell "$is_vim" "send-keys M-\\" "select-pane -l"
+bind-key -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
+bind-key -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
+bind-key -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
+bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
+bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 ```
 
 #### TPM
@@ -74,7 +74,7 @@ copying the snippet.
 When using TPM, add the following lines to your ~/.tmux.conf:
 
 ``` tmux
-set -g @plugin 'alexbenic/vim-tmux-navigator'
+set -g @plugin 'christoomey/vim-tmux-navigator'
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
@@ -169,11 +169,11 @@ directly. These following fallback mappings can be targeted to the right Tmux
 session by escaping the prefix (Tmux' `send-prefix` command).
 
 ``` tmux
-bind -r M-h run "tmux select-pane -L"
-bind -r M-j run "tmux select-pane -D"
-bind -r M-k run "tmux select-pane -U"
-bind -r M-l run "tmux select-pane -R"
-bind -r M-\ run "tmux select-pane -l"
+bind -r C-h run "tmux select-pane -L"
+bind -r C-j run "tmux select-pane -D"
+bind -r C-k run "tmux select-pane -U"
+bind -r C-l run "tmux select-pane -R"
+bind -r C-\ run "tmux select-pane -l"
 ```
 
 Troubleshooting
